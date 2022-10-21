@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Manoj Kumar",
+    "version": "1.0.0",
+    "title": "Text Extraction API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "tags": [
+    {
+      "name": "Text Extraction API",
+      "description": "An API which extracts text from images"
+    }
+  ],
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/read_ocr": {
+      "post": {
+        "tags": ["Requested Image"],
+        "summary": "Lets extract some text for your requested image",
+        "requestBody": {
+          "description": "Provide image url, language",
+          "required":true,
+          "content": {
+            "application/json":{
+                "schema": {
+                    "$ref": "#/components/schemas/read_ocr"
+                  }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/components/schemas/read_ocr"
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "read_ocr": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "type": "url",
+            "description": "Please provide image url which will ends with image format like JPG, PNG ..."
+          },
+          "lang": {
+            "type": "string",
+            "description": "Enter text language"
+          }
+        }
+      }
+    }
+  }
+}
