@@ -1,0 +1,8 @@
+[dev]
+  command = "python3 app.py"
+  port = 4000
+  targetPort = 4000
+  publish = "dist"
+  jwtRolePath = "app_metadata.authorization.roles"
+  jwtSecret = "MY_JWT_SECRET_VALUE"
+  autoLaunch = true
