@@ -22,8 +22,8 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
 if __name__ == "__main__":
-     # Debug/Development
-#     app.run(host='0.0.0.0', port=4000, debug=True)
+    # Debug/Development
+    # app.run(host='0.0.0.0', port=4000, debug=True)
     # Production
     http_server = WSGIServer(('', 4000), app)
     http_server.serve_forever()
